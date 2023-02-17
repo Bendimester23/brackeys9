@@ -1,0 +1,22 @@
+version: '2.1'
+orbs:
+  unity: game-ci/unity@1.3.0
+workflows:
+  test-build-with-executors:
+    jobs:
+      - unity/build:
+          build-target: WebGL
+          compress: true
+          context: unity
+          executor:
+            editor_version: 2020.3.44f1
+            name: unity/ubuntu
+            resource_class: large
+            target_platform: linux-il2cpp
+          name: build-linux64-il2cpp
+          project-path: Unity2D-Demo-Game-CI-CD/src
+          step-name: Build StandaloneLinux64
+          unity-license-var-name: UNITY_ENCODED_LICENSE
+          unity-password-var-name: UNITY_PASSWORD
+          unity-username-var-name: UNITY_USERNAME
+      
