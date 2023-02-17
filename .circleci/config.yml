@@ -13,8 +13,8 @@ workflows:
             name: unity/ubuntu
             resource_class: large
             target_platform: linux-il2cpp
-          name: build-linux64-il2cpp
-          project-path: Unity2D-Demo-Game-CI-CD/src
+          name: build-webgl
+          project-path: ./
           step-name: Build StandaloneLinux64
           unity-license-var-name: UNITY_ENCODED_LICENSE
           unity-password-var-name: UNITY_PASSWORD
